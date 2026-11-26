@@ -60,3 +60,9 @@ body:not(.invitation-open){overflow:hidden}
 @media(max-width:600px){.gate-panel{transition-duration:2s!important}.invitation-gate{transition-duration:2s!important}}
 /* Petal bloom removed at user request */
 .petal-ring{display:none!important}
+/* Faster reveal: let the gate swing, then dissolve the brown overlay promptly */
+.invitation-gate{transition:opacity .42s ease .82s,visibility 0s linear 1.25s!important;background:transparent!important}
+.invitation-gate.gate-opened{opacity:0;visibility:hidden!important;pointer-events:none}
+.gate-panel{transition-duration:1.55s!important;transition-timing-function:cubic-bezier(.65,0,.25,1)!important}
+.gate-opened .gate-left,.gate-opened .gate-right{filter:brightness(.72);transition-duration:1.55s!important}
+.invitation-open .hero-copy,.invitation-open .hero-art,.invitation-open .hero-bottom{transition-delay:.35s!important;transition-duration:.55s!important}
