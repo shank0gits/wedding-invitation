@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5eee2" />
+    <meta name="description" content="A wedding celebration for Srashti and Priyank — 4 and 5 December 2026." />
+    <title>Srashti & Priyank — A wedding celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="Srashti and Priyank, home"><span>s</span> & <span>p</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#celebration">Celebration</a>
+        <a href="#journey">Getting there</a>
+        <a class="nav-rsvp" href="#guest">Your invitation <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="invitation-gate" id="invitation-gate" aria-hidden="true">
+          <div class="gate-panel gate-left"><span class="gate-ganesh">ॐ</span><span class="gate-title">शुभ विवाह</span><span class="gate-couple">Priyank <i>♥</i> Srashti</span><span class="gate-date">04 — 05 December 2026</span></div>
+          <div class="gate-panel gate-right"><span class="gate-flower">❋</span><span class="gate-prompt">A wedding invitation</span><span class="gate-open">TOUCH TO OPEN</span></div>
+        </div>
+        <div class="hero-copy reveal">
+          <p class="hindi" id="hindi-blessing">॥ श्री गणेशाय नमः ॥</p>
+          <h1 id="hero-title">Priyank <span class="ampersand">&</span><br />Srashti</h1>
+          <p class="hero-intro">With the blessings of our families,<br />we invite you to celebrate our wedding.</p>
+          <div class="date-note"><span class="date-rule"></span><span id="hero-date">04 — 05 December 2026</span></div>
+        </div>
+        <button class="hero-art reveal" id="card-toggle" type="button" aria-label="Open wedding invitation card" aria-expanded="false">
+          <div class="art-flower flower-one">✿</div><div class="art-flower flower-two">❋</div>
+          <div class="mandala outer-mandala"><div class="mandala mid-mandala"><div class="mandala inner-mandala">
+          <div class="medallion-wrap" aria-hidden="true"><span class="petal-ring"></span><div class="medallion"><span class="medallion-names">Priyank<br /><i>♥</i><br />Srashti</span><span class="medallion-date">04 · 12 · 2026</span></div></div>
+          </div></div></div>
+          <span class="art-caption">शुभ विवाह · 04 December 2026</span>
+        </button>
+
+      </section>
+
+      <section class="intro-section reveal" id="celebration">
+        <div class="section-heading"><span class="section-index">01</span><span class="eyebrow">A joyful beginning</span><span class="heading-rule"></span></div>
+        <div class="invitation-card">
+          <div class="corner corner-tl">✿</div><div class="corner corner-tr">✿</div><div class="corner corner-bl">✿</div><div class="corner corner-br">✿</div>
+          <p class="hindi card-mantra">॥ शुभ विवाह ॥</p>
+          <p class="eyebrow">Together with our families</p>
+          <h2>We invite you to<br />share in our happiness</h2>
+          <p class="invitation-body">With hearts full of joy and the blessings of those we love, we invite you to celebrate as we begin our life together.</p>
+          <div class="couple-line"><span id="card-groom">Priyank</span><i>♥</i><span id="card-bride">Srashti</span></div>
+          <p class="event-date" id="card-date">Friday, 04 December 2026</p>
+          <p class="event-time" id="card-time">Baraat prasthan · 7:00 pm</p>
+          <p class="event-place" id="card-location"></p>
+          <div class="invitation-bottom">With the blessings of our families</div>
+        </div>
+        <p class="small-note">A little celebration, a lifetime of memories. <span>♥</span></p>
+      </section>
+
+      <section class="schedule-section reveal">
+        <div class="section-heading"><span class="section-index">02</span><span class="eyebrow">The celebrations</span><span class="heading-rule"></span></div>
+        <div class="section-title-row"><h2>Two days,<br /><em>one big celebration.</em></h2><p>Come for the rituals, stay for the dancing, and make a few memories with us along the way.</p></div>
+        <div class="events" id="events"></div>
+      </section>
+
+      <section class="travel-section reveal" id="journey">
+        <div class="section-heading"><span class="section-index">03</span><span class="eyebrow">Make your way to us</span><span class="heading-rule"></span></div>
+        <div class="section-title-row"><h2>Good places.<br /><em>Good people.</em></h2><p>Our hotel and celebration venue are in different places. Find each one below and get directions straight from Google Maps.</p></div>
+        <div class="travel-grid" id="places"></div>
+        <div class="route-note"><span class="route-icon">↗</span><span>Hotel and venue are separate locations. Please check the directions before you travel.</span></div>
+      </section>
+
+      <section class="guest-section reveal" id="guest">
+        <div class="guest-decoration">✿</div>
+        <p class="eyebrow">A little something just for you</p>
+        <h2>Your place is<br /><em>waiting for you.</em></h2>
+        <p class="guest-intro">Enter the name on your invitation to find your welcome and room details.</p>
+        <form class="lookup-form" id="lookup-form">
+          <label for="guest-name">Your name</label>
+          <div class="input-row"><input id="guest-name" name="guest" autocomplete="name" placeholder="Enter your name" required /><button class="button button-dark" type="submit">Find my room <span>→</span></button></div>
+        </form>
+        <div class="guest-result" id="guest-result" aria-live="polite"></div>
+        <p class="privacy-note">Your room details are shared privately with you on this invitation.</p>
+      </section>
+      <section class="rsvp-strip"><p>Can’t wait to celebrate with you.</p><span>See you in December <b>♥</b></span></section>
+    </main>
+    <footer><a class="wordmark" href="#home"><span>s</span> & <span>p</span></a><p>With love, the families of Srashti & Priyank</p><a href="#home">↑</a></footer>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
