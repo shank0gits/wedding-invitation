@@ -15,6 +15,9 @@
 
   const cardToggle = $("#card-toggle");
   const gate = $("#invitation-gate");
+  gate?.setAttribute("role", "button");
+  gate?.setAttribute("tabindex", "0");
+  gate?.setAttribute("aria-label", "Open the wedding invitation");
   const openCard = () => {
     if (document.body.classList.contains("invitation-open")) return;
     cardToggle.classList.add("is-open");
@@ -26,6 +29,12 @@
   };
   cardToggle.addEventListener("click", openCard);
   gate?.addEventListener("click", openCard);
+  gate?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openCard();
+    }
+  });
 
   const events = $("#events");
   (data.events || []).forEach((event, index) => {
@@ -40,8 +49,19 @@
 
   const places = $("#places");
   (data.places || []).forEach((place) => {
-    const card = document.createElement("article");
+    const destination = place.map || place.address;
+    const card = document.createElement(destination ? "a" : "article");
     card.className = "place-card";
+    if (destination) {
+      card.href = /^https?:\/\//i.test(destination)
+        ? destination
+        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+      card.style.color = "inherit";
+      card.style.textDecoration = "none";
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+      card.setAttribute("aria-label", `Get directions to ${place.name} in Google Maps`);
+    }
     const art = document.createElement("div");
     art.className = "place-art";
     art.setAttribute("aria-hidden", "true");
@@ -56,13 +76,10 @@
     const address = document.createElement("p");
     address.textContent = place.address;
     content.append(type, name, address);
-    if (place.map) {
-      const link = document.createElement("a");
+    if (destination) {
+      const link = document.createElement("span");
       link.className = "map-link";
-      link.href = /^https?:\/\//i.test(place.map) ? place.map : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.map)}`;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = `${place.button || "Open in Maps"} ↗`;
+      link.textContent = `${place.button || "Get directions"} ↗`;
       content.append(link);
     }
     card.append(art, content);

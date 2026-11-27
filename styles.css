@@ -66,3 +66,9 @@ body:not(.invitation-open){overflow:hidden}
 .gate-panel{transition-duration:1.55s!important;transition-timing-function:cubic-bezier(.65,0,.25,1)!important}
 .gate-opened .gate-left,.gate-opened .gate-right{filter:brightness(.72);transition-duration:1.55s!important}
 .invitation-open .hero-copy,.invitation-open .hero-art,.invitation-open .hero-bottom{transition-delay:.35s!important;transition-duration:.55s!important}
+/* Safari/iOS and touch-browser motion/input compatibility */
+.gate-panel{-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;will-change:transform}
+.invitation-gate{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.gate-flower{font-variant-emoji:text}
+.place-card[href]{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+@supports (-webkit-touch-callout:none){.gate-panel{background-color:#582c2d}.gate-opened .gate-left{-webkit-transform:rotateY(-115deg)}.gate-opened .gate-right{-webkit-transform:rotateY(115deg)}}
