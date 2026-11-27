@@ -1,4 +1,4 @@
-# Srashti & Priyank — wedding invitation
+# Priyank & Srashti — wedding invitation
 
 This repository publishes the invitation to GitHub Pages from `main` using the workflow in `.github/workflows/pages.yml`.
 

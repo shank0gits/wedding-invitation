@@ -3,8 +3,8 @@
   const $ = (selector) => document.querySelector(selector);
   const setText = (selector, value) => { const element = $(selector); if (element && value) element.textContent = value; };
 
-  document.title = `${data.bride || "Srashti"} & ${data.groom || "Priyank"} — A wedding celebration`;
-  setText("#hero-title", `${data.bride || "Srashti"} &\n${data.groom || "Priyank"}`);
+  document.title = `${data.groom || "Priyank"} & ${data.bride || "Srashti"} — A wedding celebration`;
+  setText("#hero-title", `${data.groom || "Priyank"} &\n${data.bride || "Srashti"}`);
   setText("#hindi-blessing", data.blessing);
   setText("#hero-date", data.dateShort);
   setText("#card-bride", data.bride);
